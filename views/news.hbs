@@ -1,3 +1,10 @@
-<h1> hola</h1>
+<h1>News / Blog</h1>
 
-  {{data.articles}}
+{{#each data.articles}}
+  {{#if this.title}}
+    <h3>{{this.title}}</h3>
+    <a href="{{this.link}}" target='_blank'>read more</a>
+  {{else}}
+    <a href="{{this.link}}" target='_blank'>{{this.link}}</a>
+  {{/if}}
+{{/each}}
