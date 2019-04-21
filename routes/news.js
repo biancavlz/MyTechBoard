@@ -6,16 +6,17 @@ const router = express.Router();
 
 const scrapeMedium = async () => {
   const browser = await puppeteer.launch()
-  const page = await browser.newPage()
-  await page.goto('https://medium.com/search?q=headless%20browser')
+  const page    = await browser.newPage()
+
+  await page.goto('https://medium.com/tag/javascript')
 
   const scrapedData = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('div.postArticle-content a:first-child[data-action-value]'))
-          .filter(node => node.querySelector('.graf--title'))
-          .map(link => ({
-              title: link.querySelector('.graf--title').textContent,
-              link: link.getAttribute('data-action-value')
-          }))
+    Array.from(document.querySelectorAll('div.postArticle'))
+      .map(link => ({
+        title: link.querySelector('.graf--title').textContent,
+        link: link.querySelector('div.postArticle-readMore a:first-child').getAttribute("href")
+      })
+    )
   )
 
   await browser.close()
