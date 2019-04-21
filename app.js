@@ -12,7 +12,6 @@ const path         = require('path');
 const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");
-    
 
 mongoose
   .connect('mongodb://localhost/mytechboard', {useNewUrlParser: true})
@@ -73,7 +72,6 @@ app.use(session({
 }))
 app.use(flash());
 require('./passport')(app);
-    
 
 const index = require('./routes/index');
 app.use('/', index);
@@ -84,5 +82,4 @@ app.use('/', news);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
       
-
 module.exports = app;
