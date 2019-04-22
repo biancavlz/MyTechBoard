@@ -1,0 +1,57 @@
+<h2>Add A New Learning Material</h2>
+
+<form action="/learning" method="post">
+
+  <div>
+    <label for="title">Title</label>
+    <input type="text" name="title" required>
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <input type="text" name="description">
+  </div>
+
+  <div>
+    <label for="source">Source</label>
+    <input type="text" name="source" required>
+  </div>
+
+  <div>
+    <label for="materialType">Course</label>
+    <input type="radio" name="materialType" value="course">
+    <label for="materialType">Tutorial</label>
+    <input type="radio" name="materialType" value="tutorial">
+
+    <label for="materialType">Article</label>
+    <input type="radio" name="materialType" value="article">
+
+    <label for="materialType">Book</label>
+    <input type="radio" name="materialType" value="book">
+
+    <label for="materialType">Video</label>
+    <input type="radio" name="materialType" value="video">
+
+    <label for="materialType">Podcast</label>
+    <input type="radio" name="materialType" value="podcast">
+
+    <label for="materialType">Other</label>
+    <input type="radio" name="materialType" value="other">
+
+    {{#if errorMessage}}
+    <div class="error-message">{{errorMessage}}</div>
+    {{/if}}
+  </div>
+
+  <div>
+    <label for="free">Free?</label>
+    <input type="checkbox" name="free" id="free" checked value="true">
+  </div>
+
+  <div>
+    <button type="submit">Add Learning Material</button>
+  </div>
+
+</form>
+
+<a href="/learning">List of Learning Materials</a>

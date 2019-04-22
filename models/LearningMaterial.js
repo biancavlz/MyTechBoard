@@ -20,7 +20,7 @@ const learningMaterialSchema = new Schema({
     },
     free: {
         type: Boolean,
-        default: true,
+        default: false,
     },
 });
 
