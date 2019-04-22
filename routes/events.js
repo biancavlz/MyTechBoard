@@ -21,6 +21,7 @@ router.get('/events', (req, res) => {
     upcomingEvents()
         .then(data => {
             console.log(data)
+            res.render('events', { data })
         })
         .catch(err => console.error('erro'))
 })
