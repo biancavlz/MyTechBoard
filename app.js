@@ -79,6 +79,9 @@ app.use('/', index);
 const news = require('./routes/news');
 app.use('/', news);
 
+const events = require('./routes/events')
+app.use('/', events)
+
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
       
