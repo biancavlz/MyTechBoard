@@ -1,27 +1,23 @@
 <h1>Here is a list of Learning Materials for JS!</h1>
 
 
-<ul>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN is the best place for documentation! 🤓</a>
-  </li>
-  <li><a href="https://www.youtube.com/watch?v=oxoFVqetl1E">Top 10 JS Interview Questions</a></li>
+<dl>
+  {{#each learningMaterials}}
 
-</ul>
+  <dt>
+    <h3> <a href="{{source}}">{{title}}</a> </h3>
+  </dt>
+  <dd>
+    <p>{{description}}</p>
+    <p>{{materialType}}</p>
+    {{#if free}}
+    <p>free</p>
+    {{else}}
+    <p>NOT free</p>
+    {{/if}}
+    {{/each}}
+  </dd>
 
-<h3>Here are some JavaScript Courses</h3>
-
-<ul>
-  <li><a href="https://www.coursera.org/courses?query=javascript">Hre are some Coursera courses</a></li>
-  <li><a href="https://www.khanacademy.org/search?page_search_query=javascript">JS courses on Khan Academy</a></li>
-  <li><a href="https://javascript.info/">A JavaScript tutorial</a></li>
-</ul>
 
 
-{{#each data.articles}}
-{{#if this.title}}
-<h3>{{this.title}}</h3>
-<a href="{{this.link}}" target='_blank'>read more</a>
-{{else}}
-<a href="{{this.link}}" target='_blank'>{{this.link}}</a>
-{{/if}}
-{{/each}}
+</dl>
