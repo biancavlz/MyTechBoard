@@ -1,0 +1,23 @@
+<h1>Here is a list of Learning Materials for JS!</h1>
+
+
+<dl>
+  {{#each learningMaterials}}
+
+  <dt>
+    <h3> <a href="{{source}}">{{title}}</a> </h3>
+  </dt>
+  <dd>
+    <p>{{description}}</p>
+    <p>{{materialType}}</p>
+    {{#if free}}
+    <p>free</p>
+    {{else}}
+    <p>NOT free</p>
+    {{/if}}
+    {{/each}}
+  </dd>
+
+
+
+</dl>
