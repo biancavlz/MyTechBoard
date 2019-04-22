@@ -3,8 +3,9 @@ const axios = require('axios')
 const router = express.Router()
 
 const upcomingEvents = () => {
-    const query = `?key=${process.env.MEETUP_SECRET_KEY}&sign=true&text=javascript`
-    const url = `https://api.meetup.com/find/upcoming_events` + query
+    const BASE_URL = `https://api.meetup.com/find/upcoming_events?`
+    const params   = `key=${process.env.MEETUP_SECRET_KEY}&sign=true&text=javascript`
+    const url      = `${BASE_URL}${params}`
 
     return axios
         .get(url)
@@ -23,7 +24,7 @@ router.get('/events', (req, res) => {
             console.log(data)
             res.render('events', { data })
         })
-        .catch(err => console.error('erro'))
+        .catch(err => console.error('Meetup API page failed'))
 })
 
 module.exports = router
