@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const LearningMaterial = require("../models/LearningMaterial");
+const { scrapeYoutube } = require("./tools/index");
 
 router.get("/learning", (req, res, next) => {
-    LearningMaterial.find({})
-        .then(learningMaterials => {
-            res.render("learning/index", { learningMaterials });
+    Promise.all([LearningMaterial.find({}), scrapeYoutube()])
+        .then(data => {
+            console.log(data[1]);
+            res.render("learning/index", { learningMaterials: data[0], youtubeVideos: data[1] });
         })
         .catch(err => {
             console.log("Error rendering LearningMaterials", err);
