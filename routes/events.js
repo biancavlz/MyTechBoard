@@ -21,7 +21,7 @@ const upcomingEvents = () => {
 router.get('/events', (req, res) => {
     upcomingEvents()
         .then(data => {
-            console.log(data)
+            // console.log(data)
             res.render('events', { data })
         })
         .catch(err => console.error('Meetup API page failed'))
