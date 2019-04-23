@@ -1,23 +1,16 @@
 <div class="container page-container">
-      <h1 class="events-header">Events</h1>
-      
-      <div class="card">
-        <div class="card-body">
-          <h1 class="card-title">{{this.name}}</h1>
-          <div class="card-text">
-          {{#each data.events}}
-            <p>Where: {{this.venue.name}}</p>
-            <p>Group: {{this.group.name}}</p>
-            <p>when: {{this.local_date}}</p>
-            <p>Time: {{this.local_time}}</p>
-            <!-- <p>{{{this.description}}}</p> -->
-            <p>{{this.visibility}}</p>
-            <a href="{{this.link}}" target='_blank'>more details</a>
-          {{/each}}
-          </div>
-        </div>
+  <h1 class="events-header">Events</h1>
+
+  {{#each data.events}}
+    <div class="card events-card">
+      <div class="card-body">
+          <h5 class="card-title events-cart-title">{{this.name}}</h5>
+          <p class="card-text"><strong>Where: </strong>{{this.venue.name}}</p>
+          <p class="card-text"><strong>When: </strong>{{this.local_date}}</p>
+          <p class="card-text"><strong>Time: </strong>{{this.local_time}}</p>
+          <p class="card-text"><strong>Event: </strong>{{this.visibility}}</p>
+          <a href="{{this.link}}" class="btn btn-primary"target='_blank'>Click here more details</a>
       </div>
-      
     </div>
-  </div>
+  {{/each}}
 </div>
