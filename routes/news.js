@@ -1,31 +1,28 @@
-const express = require('express')
-const { scrapeMedium, scrapeHackerNews } = require('./tools/index')
-const puppeteer = require('puppeteer')
+const express = require("express");
+const { scrapeMedium, scrapeHackerNews } = require("./tools/index");
+const News = require("../models/News");
+const puppeteer = require("puppeteer");
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/news', (req, res) => {
-    const mediumArticles = new Promise((resolve, reject) => {
-        scrapeMedium()
-            .then(data => {
-                resolve(data)
-            })
-            .catch(err => reject('Medium scrape failed'))
-    })
-
-    const hackerNews = new Promise((resolve, reject) => {
-        scrapeHackerNews()
-            .then(data => {
-                resolve(data)
-            })
-            .catch(err => reject('Hacker News scrape failed'))
-    })
-
-    Promise.all([mediumArticles, hackerNews])
-        .then(data => {
-            res.render('news', { data: { articles: data[0], news: data[1] } })
+router.get("/news", (req, res) => {
+    Promise.all([scrapeMedium(), scrapeHackerNews()])
+        .then(providers => {
+            return Promise.all(
+                providers.map(provider => {
+                    return provider.map(news => {
+                        return News.findOneAndUpdate(news, news, { upsert: true });
+                    });
+                })
+            );
         })
-        .catch(err => res.status(500).send(err))
-})
+        .then(() => {
+            return Promise.all([News.find({})]);
+        })
+        .then(data => {
+            res.render("news", { data: { articles: data[0], news: data[1] } });
+        })
+        .catch(err => res.status(500).send(err));
+});
 
-module.exports = router
+module.exports = router;
