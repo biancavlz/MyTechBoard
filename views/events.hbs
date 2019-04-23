@@ -1,0 +1,12 @@
+<h1>Events</h1>
+
+{{#each data.events}}
+  <h3>{{this.name}}</h3>
+  <p>Where: {{this.venue.name}}</p>
+  <p>Group: {{this.group.name}}</p>
+  <p>when: {{this.local_date}}</p>
+  <p>Time: {{this.local_time}}</p>
+  <p>{{{this.description}}}</p>
+  <p>{{this.visibility}}</p>
+  <a href="{{this.link}}" target='_blank'>more details</a>
+{{/each}}
