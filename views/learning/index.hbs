@@ -6,6 +6,10 @@
     <h3> <a href="{{source}}">{{title}}</a> </h3>
   </dt>
   <dd>
+    <form action="/techboard" method="post"> <button type="submit">Add this to MyTechBoard</button>
+      <input type="hidden" value="{{_id}}" name="resourceId">
+    </form>
+
     <p>{{description}}</p>
     <p>{{materialType}}</p>
     {{#if free}}

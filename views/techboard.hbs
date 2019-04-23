@@ -3,6 +3,14 @@
 <section class="techboard">
   <h2>MyTechBoard</h2>
   <p>Here you can see all the content you have pinned</p>
+
+  <dl>
+    {{#each materials}}
+    <dt>{{title}}</dt>
+    <dd> <a href="{{source}}">Link</a> </dd>
+    {{/each}}
+  </dl>
+
 </section>
 
 
