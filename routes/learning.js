@@ -3,6 +3,7 @@ const router = express.Router();
 const LearningMaterial = require("../models/LearningMaterial");
 const Video = require("../models/Video");
 const { scrapeYoutube } = require("./tools/index");
+const { authenticationCheck } = require("./tools/index");
 
 router.get("/learning", (req, res, next) => {
     scrapeYoutube()
@@ -26,11 +27,11 @@ router.get("/learning", (req, res, next) => {
         });
 });
 
-router.get("/learning/new", (req, res, next) => {
+router.get("/learning/new", authenticationCheck, (req, res, next) => {
     res.render("learning/new");
 });
 
-router.post("/learning", (req, res, next) => {
+router.post("/learning", authenticationCheck, (req, res, next) => {
     const { title, description, source, materialType, free } = req.body;
     LearningMaterial.create({
         title,
