@@ -1,16 +1,28 @@
 const express = require("express");
 const router = express.Router();
 const LearningMaterial = require("../models/LearningMaterial");
+const Video = require("../models/Video");
 const { scrapeYoutube } = require("./tools/index");
 
 router.get("/learning", (req, res, next) => {
-    Promise.all([LearningMaterial.find({}), scrapeYoutube()])
+    scrapeYoutube()
+        .then(youtubeVideos => {
+            return Promise.all(
+                youtubeVideos.map(element => {
+                    element.title = element.title.trim();
+                    Video.findOneAndUpdate(element, element, { upsert: true });
+                })
+            );
+        })
+        .then(() => {
+            return Promise.all([LearningMaterial.find({}), Video.find()]);
+        })
         .then(data => {
             console.log(data[1]);
             res.render("learning/index", { learningMaterials: data[0], youtubeVideos: data[1] });
         })
         .catch(err => {
-            console.log("Error rendering LearningMaterials", err);
+            console.log("Error rendering LearningMaterials and Youtube videos", err);
         });
 });
 
