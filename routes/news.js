@@ -1,27 +1,24 @@
 const express = require('express')
 const { scrapeMedium, scrapeHackerNews } = require('./tools/index')
+const News = require('../models/News')
 const puppeteer = require('puppeteer')
 
 const router = express.Router()
 
 router.get('/news', (req, res) => {
-    const mediumArticles = new Promise((resolve, reject) => {
-        scrapeMedium()
-            .then(data => {
-                resolve(data)
-            })
-            .catch(err => reject('Medium scrape failed'))
-    })
-
-    const hackerNews = new Promise((resolve, reject) => {
-        scrapeHackerNews()
-            .then(data => {
-                resolve(data)
-            })
-            .catch(err => reject('Hacker News scrape failed'))
-    })
-
-    Promise.all([mediumArticles, hackerNews])
+    Promise.all([scrapeMedium(), scrapeHackerNews()])
+        .then(providers => {
+            return Promise.all(
+                providers.map(provider => {
+                    return provider.map(news => {
+                        return News.findOneAndUpdate(news, news, { upsert: true }).then(data => {})
+                    })
+                })
+            )
+        })
+        .then(() => {
+            return Promise.all([News.find({})])
+        })
         .then(data => {
             res.render('news', { data: { articles: data[0], news: data[1] } })
         })
