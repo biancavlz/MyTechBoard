@@ -1,9 +1,7 @@
 <h1>Here is a list of Learning Materials for JS!</h1>
 
-
 <dl>
   {{#each learningMaterials}}
-
   <dt>
     <h3> <a href="{{source}}">{{title}}</a> </h3>
   </dt>
@@ -17,7 +15,20 @@
     {{/if}}
     {{/each}}
   </dd>
-
-
-
 </dl>
+
+<h2>Here are some useful Youtube videos</h2>
+<dl>
+  {{#each youtubeVideos}}
+  <dt>{{title}}</dt>
+  <dd>
+    <a href="https://www.youtube.com/{{link}}">Link to video</a>
+  </dd>
+  {{/each}}
+</dl>
+
+
+<h2>Something missing?</h2>
+
+
+<h4><a href="/learning/new">Add New Learning Material</a></h4>
