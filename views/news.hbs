@@ -1,22 +1,35 @@
-<h1>Articles</h1>
-
-{{#each data.articles}}
-  {{#if this.title}}
-    <h3>{{this.title}}</h3>
-    <a href="{{this.link}}" target='_blank'>read more</a>
-  {{else}}
-    <a href="{{this.link}}" target='_blank'>{{this.link}}</a>
-  {{/if}}
-{{/each}}
-
-
-<h1>News</h1>
-
-{{#each data.news}}
-  {{#if this.title}}
-    <h3>{{this.title}}</h3>
-    <a href="{{this.link}}" target='_blank'>read more</a>
-  {{else}}
-    <a href="{{this.link}}" target='_blank'>{{this.link}}</a>
-  {{/if}}
-{{/each}}
+<div class="news-main container page-container">
+  <div class="row">
+    <div class="card col-md-6">
+      <div class="card-body">
+        <h1 class="card-title news-header">Articles</h1>
+        <p class="card-text">
+          {{#each data.articles}}
+            {{#if this.title}}
+              <h5 class="news-title">{{this.title}}</h5>
+              <a href="{{this.link}}" target='_blank'>read more</a>
+            {{else}}
+              <a href="{{this.link}}" target='_blank'>{{this.link}}</a>
+            {{/if}}
+          {{/each}}
+        </p>
+      </div>
+    </div>
+      
+    <div class="card col-md-6">
+      <div class="card-body">
+        <h1 class="card-title news-header">News</h1>
+        <p class="card-text">
+          {{#each data.news}}
+            {{#if this.title}}
+              <h5 class="news-title">{{this.title}}</h5>
+              <a href="{{this.link}}" target='_blank'>read more</a>
+            {{else}}
+              <a href="{{this.link}}" target='_blank'>{{this.link}}</a>
+            {{/if}}
+          {{/each}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
