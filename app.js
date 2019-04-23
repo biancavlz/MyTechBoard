@@ -81,6 +81,9 @@ app.use("/", news);
 const learning = require("./routes/learning");
 app.use("/", learning);
 
+const events = require('./routes/events')
+app.use('/', events)
+
 const authRoutes = require("./routes/auth");
 app.use("/auth", authRoutes);
 
