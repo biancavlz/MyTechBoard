@@ -1,91 +1,104 @@
 <div class="news-main container page-container">
   <div class="my-3 p-3 bg-white rounded shadow-sm">
-    <h1 class="news-header border-bottom border-gray pb-2 mb-0">MyTechBoard</h1>
-    <h4>Here you can see all the content you have pinned</h4>
+    <h1 class="news-header border-bottom border-gray pb-2 mb-0 my-tech-board-header">MyTechBoard</h1>
+    <h4 class="news-header border-bottom border-gray pb-2 mb-0">Here you can see all the JavaScript content you have
+      saved</h4>
 
-    <section class="techboard">
 
-      <h3>Learning Materials</h3>
-      <dl>
-        {{#each materials}}
-        <dt>{{title}}</dt>
-        <dd> <a class="btn btn-light" href="{{source}}">Learn More</a>
+    <section class="techboard card-container cards-wrapper">
 
-          <form action="/techboard/delete" method="post">
-            <button class="btn btn-light">
-              Remove from List
-              <input type="hidden" value="{{_id}}" name="resourceId">
-              <input type="hidden" value="learningMaterial" name="resourceType">
-            </button>
-        </dd>
-        </form>
+      <div class="card-info card text-center" style="width: 30rem;">
+        <h3>Learning Materials</h3>
+        <dl>
+          {{#each materials}}
+          <h5 class="card-title">{{title}}</h5>
+          <dd> <a class="btn btn-light" href="{{source}}">Learn More</a>
 
-        {{/each}}
-      </dl>
+            <form action="/techboard/delete" method="post">
+              <button class="btn btn-light">
+                Remove from List
+                <input type="hidden" value="{{_id}}" name="resourceId">
+                <input type="hidden" value="learningMaterial" name="resourceType">
+              </button>
 
-      <h3>Youtube Videos</h3>
-      <dl>
-        {{#each videos}}
-        <dt>{{title}}</dt>
-        <dd> <a class="btn btn-light" href="{{link}}">Watch Video</a>
+          </dd>
+          </form>
+          {{/each}}
+        </dl>
+      </div>
 
-          <form action="/techboard/delete" method="post">
-            <button class="btn btn-light">
-              Remove from List
-              <input type="hidden" value="{{_id}}" name="resourceId">
-              <input type="hidden" value="video" name="resourceType">
-            </button>
-            {{/each}}
-      </dl>
+      <div class="card-info card text-center" style="width: 30rem;">
+        <h3>Youtube Videos</h3>
+        <dl>
+          {{#each videos}}
+          <h5 class="card-title">{{title}}</h5>
+          <dd> <a class="btn btn-light" href="{{link}}">Watch Video</a>
 
-      <h3>News</h3>
+            <form action="/techboard/delete" method="post">
+              <button class="btn btn-light">
+                Remove from List
+                <input type="hidden" value="{{_id}}" name="resourceId">
+                <input type="hidden" value="video" name="resourceType">
+              </button>
+              {{/each}}
+        </dl>
+      </div>
 
-      <dl>
-        {{#each news}}
-        <dt>{{title}}</dt>
-        <dd> <a class="btn btn-light" href="{{link}}">Read the News</a>
+      <div class="card-info card text-center" style="width: 30rem;">
+        <h3>News</h3>
 
-          <form action="/techboard/delete" method="post">
-            <button class="btn btn-light">
-              Remove from List
-              <input type="hidden" value="{{_id}}" name="resourceId">
-              <input type="hidden" value="news" name="resourceType">
-            </button>
+        <dl>
+          {{#each news}}
+          <h5 class="card-title">{{title}}</h5>
+          <dd> <a class="btn btn-light" href="{{link}}">Read the News</a>
 
-            {{/each}}
-      </dl>
+            <form action="/techboard/delete" method="post">
+              <button class="btn btn-light">
+                Remove from List
+                <input type="hidden" value="{{_id}}" name="resourceId">
+                <input type="hidden" value="news" name="resourceType">
+              </button>
 
-      <h3>Events</h3>
+              {{/each}}
+        </dl>
+      </div>
+
+      <div class="card-info card text-center" style="width: 30rem;">
+        <h3>Events</h3>
+        <h5 class="card-title">{{title}}</h5>
+      </div>
 
     </section>
 
-    <h2>No content?</h2>
-    <p>start by checking out News, Events & Learning Materials you might like</p>
+    <div>
+      <h2>No content?</h2>
+      <p>start by checking out News, Events & Learning Materials you might like</p>
+    </div>
 
     <section class="card-container cards-wrapper">
       <div class="card-info card text-center" style="width: 18rem;">
-        <img src="./images/meetups.jpg" class="card-img-top" alt="Meetups">
+        <img src="./images/Events_ppl.svg" class="card-img-top event-img" alt="Tools">
         <div class="card-body">
-          <h5 class="card-title">JavaScript Events</h5>
+          <h4 class="card-title">Events</h4>
           <p class="card-text">Check out JavaScript Meetups, Events & Conferences</p>
           <a href="/events" class="btn btn-secondary">Go to Event list</a>
         </div>
       </div>
 
       <div class="card-info card text-center" style="width: 18rem;">
-        <img src="./images/tools.png" class="card-img-top" alt="Tools">
+        <img src="./images/Learning.svg" class="card-img-top learning-img" alt="Tools">
         <div class="card-body">
-          <h5 class="card-title">JavaScript Learning Materials</h5>
-          <p class="card-text">Check out Tutorials, Courses and other Learning Materials for JavaScript</p>
+          <h5 class="card-title">Learning Materials & Videos</h5>
+          <p class="card-text">Check out Books, Tutorial videos, Courses and other Learning Materials for JavaScript</p>
           <a href="/learning" class="btn btn-secondary">Go to Learning List</a>
         </div>
       </div>
 
       <div class="card-info card text-center" style="width: 18rem;">
-        <img src="./images/news.jpg" class="card-img-top" alt="News">
+        <img src="./images/Newspaper.svg" class="card-img-top news-img" alt="News">
         <div class="card-body">
-          <h5 class="card-title">JavaScript News</h5>
-          <p class="card-text">Check out the latest JavaScript news and blog posts</p>
+          <h5 class="card-title">News</h5>
+          <p class="card-text">Check out the latest JavaScript News and Blog posts</p>
           <a href="/news" class="btn btn-secondary">Go to News List</a>
         </div>
       </div>
