@@ -13,8 +13,13 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
 
+const mongoConnectURI =
+    process.env.NODE_ENV === "development"
+        ? "mongodb://localhost:27017/mytechboard"
+        : process.env.MONGODB_URI;
+console.log(mongoConnectURI);
 mongoose
-    .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+    .connect(mongoConnectURI, { useNewUrlParser: true })
     .then(x => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
     })
