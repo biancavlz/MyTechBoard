@@ -7,65 +7,70 @@
 
     <section class="techboard card-container cards-wrapper">
 
-      <div class="card-info card text-center" style="width: 30rem;">
+      <div class="card-info card text-center learning-style" style="width: 30rem;">
         <h3>Learning Materials</h3>
         <dl>
           {{#each materials}}
-          <h5 class="card-title">{{title}}</h5>
-          <dd> <a class="btn btn-light" href="{{source}}">Learn More</a>
+          <h5 class="card-title"><i class="fas fa-laptop-code"></i> {{title}}</h5>
+          <dd> <a class="btn btn-light " href="{{source}}">Learn More</a>
 
-            <form action="/techboard/delete" method="post">
+            <form action="/techboard/delete" method="post" class="delete-button">
               <button class="btn btn-light">
-                Remove from List
+                <i class="fas fa-trash-alt"></i>
                 <input type="hidden" value="{{_id}}" name="resourceId">
                 <input type="hidden" value="learningMaterial" name="resourceType">
               </button>
-
+            </form>
           </dd>
-          </form>
+
           {{/each}}
         </dl>
       </div>
 
-      <div class="card-info card text-center" style="width: 30rem;">
-        <h3>Youtube Videos</h3>
-        <dl>
-          {{#each videos}}
-          <h5 class="card-title">{{title}}</h5>
-          <dd> <a class="btn btn-light" href="{{link}}">Watch Video</a>
-
-            <form action="/techboard/delete" method="post">
-              <button class="btn btn-light">
-                Remove from List
-                <input type="hidden" value="{{_id}}" name="resourceId">
-                <input type="hidden" value="video" name="resourceType">
-              </button>
-              {{/each}}
-        </dl>
+      <div class="card-info card text-center event-style" style="width: 30rem;">
+        <h3>Events</h3>
+        <h5 class="card-title"> <i class="fas fa-users"> </i>{{title}}</h5>
+        <i class="fas fa-trash-alt"></i>
       </div>
 
-      <div class="card-info card text-center" style="width: 30rem;">
-        <h3>News</h3>
+      <div class="card-info card text-center news-style" style="width: 30rem;">
 
+        <h3>News</h3>
         <dl>
           {{#each news}}
-          <h5 class="card-title">{{title}}</h5>
+          <h5 class="card-title"><i class="far fa-newspaper"></i> {{title}}</h5>
           <dd> <a class="btn btn-light" href="{{link}}">Read the News</a>
 
-            <form action="/techboard/delete" method="post">
+            <form action="/techboard/delete" method="post" class="delete-button">
               <button class="btn btn-light">
-                Remove from List
+                <i class="fas fa-trash-alt"></i>
                 <input type="hidden" value="{{_id}}" name="resourceId">
                 <input type="hidden" value="news" name="resourceType">
               </button>
-
-              {{/each}}
+            </form>
+          </dd>
+          {{/each}}
         </dl>
+
       </div>
 
-      <div class="card-info card text-center" style="width: 30rem;">
-        <h3>Events</h3>
-        <h5 class="card-title">{{title}}</h5>
+      <div class="card-info card text-center learning-style" style="width: 30rem;">
+        <h3>Youtube Videos</h3>
+        <dl>
+          {{#each videos}}
+          <h5 class="card-title"><i class="fas fa-tv"></i> {{title}}</h5>
+          <dd> <a class="btn btn-light" href="{{link}}">Watch Video</a>
+
+            <form action="/techboard/delete" method="post" class="delete-button">
+              <button class="btn btn-light">
+                <i class="fas fa-trash-alt"></i>
+                <input type="hidden" value="{{_id}}" name="resourceId">
+                <input type="hidden" value="video" name="resourceType">
+              </button>
+            </form>
+          </dd>
+          {{/each}}
+        </dl>
       </div>
 
     </section>

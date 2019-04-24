@@ -163,11 +163,19 @@ footer a {
     height: 160px;
 }
 
+.event-style {
+    background-color: #ff8077;
+}
+
 .learning-img {
     background-color: #f7df1e;
     padding: 10px;
     padding-bottom: 12px;
     height: 160px;
+}
+
+.learning-style {
+    background-color: #f7df1e;
 }
 
 .news-img {
@@ -177,6 +185,14 @@ footer a {
     height: 160px;
 }
 
+.news-style {
+    background-color: #4f88c1;
+}
+
 .my-tech-board-header {
     font-family: "Fugaz One", cursive;
+}
+
+.delete-button {
+    display: inline-block;
 }
