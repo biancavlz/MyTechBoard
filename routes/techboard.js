@@ -7,6 +7,7 @@ const LearningMaterial = require("../models/LearningMaterial");
 const mongoose = require("mongoose");
 
 router.get("/techboard", authenticationCheck, (req, res, next) => {
+    if (!req.user.techboard) return res.render("techboard", { materials: [] });
     const learningMaterialIds = req.user.techboard.learningMaterials;
     const objectIds = learningMaterialIds.map(id => {
         return mongoose.Types.ObjectId(id);
