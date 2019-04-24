@@ -1,7 +1,12 @@
 const puppeteer = require("puppeteer");
 
 const scrapeMedium = async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        'args' : [
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+      ]
+    });
     const page = await browser.newPage();
 
     await page.goto("https://medium.com/tag/javascript");
@@ -18,7 +23,12 @@ const scrapeMedium = async () => {
 };
 
 const scrapeHackerNews = async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        'args' : [
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+      ]
+    });
     const page = await browser.newPage();
     const query =
         "?query=JavaScript&sort=byPopularity&dateRange=pastWeek&type=all&storyText=false&prefix=false&page=0";
@@ -37,7 +47,12 @@ const scrapeHackerNews = async () => {
 };
 
 const scrapeYoutube = async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        'args' : [
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+      ]
+    });
     const page = await browser.newPage();
     const url = "https://www.youtube.com/results?search_query=javascript+tutorial";
 
