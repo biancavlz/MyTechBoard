@@ -2,31 +2,37 @@
   <section class="courses">
     <h1 class="events-header">Learning Materials</h1>
     {{#each learningMaterials}}
-      <div class="card events-card">
-        <div class="card-body">
-          <h5 class="card-title events-cart-title">{{title}}</h5>
-          <p class="card-text">{{description}}</p>
-          <p class="card-text"><strong>Resource: </strong>{{materialType}}</p>
-          {{#if free}}
-            <p class="card-text"><strong>Cost: </strong>Free</p>
-          {{else}}
-            <p class="card-text"><strong>Cost: </strong>NOT free</p>
-          {{/if}}
-          <a href="{{source}}" class="btn btn-primary"target='_blank'>Go to {{materialType}}</a>
-        </div>
+    <div class="card events-card">
+      <div class="card-body">
+        <h5 class="card-title events-cart-title">{{title}}</h5>
+        <h3> <a href="{{source}}">{{title}}</a> </h3>
+
+        <form action="/techboard" method="post"> <button type="submit">Add this to MyTechBoard</button>
+          <input type="hidden" value="{{_id}}" name="resourceId">
+        </form>
+
+        <p class="card-text">{{description}}</p>
+        <p class="card-text"><strong>Resource: </strong>{{materialType}}</p>
+        {{#if free}}
+        <p class="card-text"><strong>Cost: </strong>Free</p>
+        {{else}}
+        <p class="card-text"><strong>Cost: </strong>NOT free</p>
+        {{/if}}
+        <a href="{{source}}" class="btn btn-primary" target='_blank'>Go to {{materialType}}</a>
       </div>
+    </div>
     {{/each}}
 
-    <hr/>
+    <hr />
 
     <h2>Videos</h2>
     {{#each youtubeVideos}}
-      <div class="card events-card">
-        <div class="card-body">
-          <h5 class="card-title events-cart-title">{{title}}</h5>
-          <a href="https://www.youtube.com/{{link}}" class="btn btn-primary"target='_blank'>go to video</a>
-        </div>
+    <div class="card events-card">
+      <div class="card-body">
+        <h5 class="card-title events-cart-title">{{title}}</h5>
+        <a href="https://www.youtube.com/{{link}}" class="btn btn-primary" target='_blank'>go to video</a>
       </div>
+    </div>
     {{/each}}
   </section>
 

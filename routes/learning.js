@@ -19,7 +19,6 @@ router.get("/learning", (req, res, next) => {
             return Promise.all([LearningMaterial.find({}), Video.find()]);
         })
         .then(data => {
-            console.log(data[1]);
             res.render("learning/index", { learningMaterials: data[0], youtubeVideos: data[1] });
         })
         .catch(err => {
