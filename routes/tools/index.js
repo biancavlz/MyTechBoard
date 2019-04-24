@@ -54,8 +54,35 @@ const scrapeYoutube = async () => {
     return scrapedData;
 };
 
+const authenticationCheck = (req, res, next) => {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        res.render("error", {
+            errorMessage: `This is a content is available only for logged in users, please <a href="/auth/signup">sign up</a>
+                or <a href="/auth/login">log in</a>.`,
+        });
+    }
+};
+
+const rolesCheck = role => {
+    return (req, res, next) => {
+        if (!req.isAuthenticated()) {
+            res.render("error", { errorMessage: "This is a protected route" });
+        } else if (req.user.role !== role) {
+            res.render("error", {
+                errorMessage: "You do not have sufficient privileges",
+            });
+        } else {
+            next();
+        }
+    };
+};
+
 module.exports = {
     scrapeHackerNews,
     scrapeMedium,
     scrapeYoutube,
+    authenticationCheck,
+    rolesCheck,
 };
