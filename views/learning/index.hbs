@@ -4,11 +4,13 @@
     {{#each learningMaterials}}
     <div class="card events-card">
       <div class="card-body">
-        <h5 class="card-title events-cart-title">{{title}}</h5>
-        <h3> <a href="{{source}}">{{title}}</a> </h3>
+        <h5 class="card-title events-cart-title"><i class="fas fa-book"></i> {{title}}</h5>
+        <h3> <a href="{{source}}"><i class="fas fa-book"> </i>{{title}}</a> </h3>
 
-        <form action="/techboard" method="post"> <button type="submit">Add this to MyTechBoard</button>
+        <form action="/techboard" method="post"> <button class="add-button" type="submit">Add this to
+            MyTechBoard</button>
           <input type="hidden" value="{{_id}}" name="resourceId">
+           <input type="hidden" value="learningMaterial" name="resourceType">
         </form>
 
         <p class="card-text">{{description}}</p>
@@ -30,6 +32,14 @@
     <div class="card events-card">
       <div class="card-body">
         <h5 class="card-title events-cart-title">{{title}}</h5>
+
+        <form action="/techboard" method="post"> <button class="add-button" type="submit">Add this to
+            MyTechBoard</button>
+          <input type="hidden" value="{{_id}}" name="resourceId">
+          <input type="hidden" value="video" name="resourceType">
+        </form>
+
+
         <a href="https://www.youtube.com/{{link}}" class="btn btn-primary" target='_blank'>go to video</a>
       </div>
     </div>
