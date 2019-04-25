@@ -29,8 +29,21 @@
 
       <div class="card-info card text-center event-style" style="width: 30rem;">
         <h3>Events</h3>
-        <h5 class="card-title"> <i class="fas fa-users"> </i>{{title}}</h5>
-        <i class="fas fa-trash-alt"></i>
+        <dl>
+          {{#each events}}
+          <h5 class="card-title"> <i class="fas fa-users"> </i>{{name}}</h5>
+
+          <dd> <a class="btn btn-light " href="{{link}}">Learn More</a>
+            <form action="/techboard/delete" method="post" class="delete-button">
+              <button class="btn btn-light">
+                <i class="fas fa-trash-alt"></i>
+                <input type="hidden" value="{{_id}}" name="resourceId">
+                <input type="hidden" value="events" name="resourceType">
+              </button>
+            </form>
+          </dd>
+          {{/each}}
+        </dl>
       </div>
 
       <div class="card-info card text-center news-style" style="width: 30rem;">
