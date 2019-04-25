@@ -1,14 +1,16 @@
 <div class="container page-container">
   <section class="courses">
-    <h1 class="events-header">Learning Materials</h1>
+    <h1 class="events-header learning-style">Learning Materials</h1>
+
     {{#each learningMaterials}}
     <div class="card events-card">
       <div class="card-body">
-        <h5 class="card-title events-cart-title">{{title}}</h5>
-        <h3> <a href="{{source}}">{{title}}</a> </h3>
+        <h5 class="card-title events-cart-title"><i class="fas fa-laptop-code"></i> {{title}}</h5>
 
-        <form action="/techboard" method="post"> <button type="submit">Add this to MyTechBoard</button>
+        <form action="/techboard" method="post"> <button class="add-button" type="submit">Add this to
+            MyTechBoard</button>
           <input type="hidden" value="{{_id}}" name="resourceId">
+          <input type="hidden" value="learningMaterial" name="resourceType">
         </form>
 
         <p class="card-text">{{description}}</p>
@@ -25,11 +27,20 @@
 
     <hr />
 
-    <h2>Videos</h2>
+    <h1 class="events-header learning-style">Videos</h1>
+
     {{#each youtubeVideos}}
     <div class="card events-card">
       <div class="card-body">
-        <h5 class="card-title events-cart-title">{{title}}</h5>
+        <h5 class="card-title events-cart-title"><i class="fas fa-tv"></i> {{title}}</h5>
+
+        <form action="/techboard" method="post"> <button class="add-button" type="submit">Add this to
+            MyTechBoard</button>
+          <input type="hidden" value="{{_id}}" name="resourceId">
+          <input type="hidden" value="video" name="resourceType">
+        </form>
+
+
         <a href="https://www.youtube.com/{{link}}" class="btn btn-primary" target='_blank'>go to video</a>
       </div>
     </div>
@@ -38,6 +49,7 @@
 
   <section class="add-new">
     <h3>Something missing?</h3>
-    <a href="/learning/new">Add New Learning Material</a>
+
+    <h4><a href="/learning/new">Add New Learning Material</a> </h4>
   </section>
 </div>

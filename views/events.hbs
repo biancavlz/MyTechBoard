@@ -1,17 +1,18 @@
 <div class="container page-container">
-  <h1 class="events-header">Events</h1>
+
+  <h1 class="news-header border-bottom border-gray pb-2 mb-0 event-style">Events</h1>
 
   {{#each data.events}}
-    <div class="card events-card">
-      <div class="card-body">
-          <h5 class="card-title events-cart-title">{{this.name}}</h5>
-          <p class="card-text"><strong>Where: </strong>{{this.venue.name}}</p>
-          <p class="card-text"><strong>When: </strong>{{this.local_date}}</p>
-          <p class="card-text"><strong>Time: </strong>{{this.local_time}}</p>
-          <p class="card-text"><strong>Event: </strong>{{this.visibility}}</p>
-          <a href="{{this.link}}" class="btn btn-primary"target='_blank'>Click here more details</a>
-      </div>
+  <div class="card events-card">
+    <div class="card-body">
+      <h5 class="card-title events-cart-title"><i class="fas fa-users"></i> {{this.name}}</h5>
+      <p class="card-text"><strong>Where: </strong>{{this.venue.name}}</p>
+      <p class="card-text"><strong>When: </strong>{{this.local_date}}</p>
+      <p class="card-text"><strong>Time: </strong>{{this.local_time}}</p>
+      <p class="card-text"><strong>Event: </strong>{{this.visibility}}</p>
+      <a href="{{this.link}}" class="btn btn-primary" target='_blank'>Click here more details</a>
     </div>
+  </div>
   {{/each}}
 
 </div>
