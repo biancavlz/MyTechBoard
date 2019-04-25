@@ -38,11 +38,12 @@ const getNewsQuery = function(techboard) {
 
 const getEventQuery = function(techboard) {
     const eventIds = techboard.events
+    // console.log(eventIds)
     const objectIds = eventIds.map(id => {
         if (id) return mongoose.Types.ObjectId(id)
     })
     const query = Event.where('_id').in(objectIds)
-    return query.toString()
+    return query
 }
 
 router.get('/techboard', authenticationCheck, (req, res, next) => {
