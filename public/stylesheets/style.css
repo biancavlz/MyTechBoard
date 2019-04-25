@@ -45,15 +45,15 @@ footer {
   width: 100%;
   height: 2.5rem;
   background-color: #323330;
-  color: white;
   height: 30px; }
 
 footer p {
   align-self: center;
-  padding-top: 5px; }
+  padding-top: 5px;
+  color: #989997; }
 
 footer a {
-  color: white; }
+  color: #989997; }
 
 /* home */
 /*This is the jumotron header*/
@@ -61,8 +61,8 @@ footer a {
   font-family: "Fugaz One", cursive;
   color: #f8f8f2;
   font-size: 6rem;
-  padding-bottom: 45px;
-  margin-bottom: 15px;
+  padding-bottom: 50px;
+  margin-bottom: 25px;
   text-shadow: 2px 2px #25253d; }
 
 .jumbotron {
@@ -130,14 +130,16 @@ footer a {
 /*Tech Board styling*/
 /*add to my tech board button */
 .add-button {
-  background-color: #181021;
-  color: #f8dc58;
+  background-color: #323330;
+  color: #989997;
   border-radius: 5px;
-  display: inline-block; }
+  display: inline-block;
+  padding: 2px;
+  margin-bottom: 5px; }
 
 .add-button:hover {
   background-color: #f8dc58;
-  color: #181021; }
+  color: #323330; }
 
 .my-tech-board-header {
   font-family: "Fugaz One", cursive; }
@@ -172,5 +174,61 @@ footer a {
 
 .news-style {
   background-color: #4f88c1; }
+
+/*Button styling*/
+.btn.btn-secondary {
+  background-color: #323330;
+  color: #989997;
+  display: inline-block; }
+
+.btn.btn-secondary.learning-button:hover {
+  background-color: #f8dc58;
+  color: #323330;
+  display: inline-block; }
+
+.btn.btn-secondary.event-button:hover {
+  background-color: #ff8077;
+  color: #323330;
+  border-color: #323330;
+  display: inline-block; }
+
+.btn.btn-secondary.news-button:hover {
+  background-color: #4f88c1;
+  color: #323330;
+  border-color: #323330;
+  display: inline-block; }
+
+.btn.btn-primary.event-more {
+  background-color: #ff8077;
+  color: #323330;
+  border-color: #323330;
+  display: inline-block; }
+
+.btn.btn-primary.learn-more {
+  background-color: #f8dc58;
+  color: #323330;
+  border-color: #323330;
+  display: inline-block; }
+
+.btn.btn-primary.news-more {
+  background-color: #4f88c1;
+  color: #323330;
+  border-color: #323330;
+  display: inline-block; }
+
+.btn.btn-primary:hover {
+  background-color: #323330;
+  color: #989997;
+  display: inline-block; }
+
+.btn.btn-primary.login {
+  background-color: #323330;
+  color: #989997;
+  border-color: #323330; }
+
+.btn.btn-primary.login:hover {
+  background-color: #989997;
+  color: #323330;
+  border-color: #989997; }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,46 +2,24 @@
   <div class="my-3 p-3 bg-white rounded shadow-sm">
     <h1 class="news-header border-bottom border-gray pb-2 mb-0 news-style">News</h1>
 
-    {{#each data.articles}}
-    <div class="media text-muted pt-3">
+    <div class="container page-container">
+      <section class="courses">
 
-      <p class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">
-        <strong class="d-block text-gray-dark"> <i class="far fa-newspaper"></i> {{this.title}}</strong>
+        {{#each data.articles}}
+        <div class="card events-card">
+          <div class="card-body">
+            <h5 class="card-title events-cart-title"><i class="far fa-newspaper"></i> {{title}}</h5>
 
-        <form action="/techboard" method="post"> <button class="add-button" type="submit">Add this to
-            MyTechBoard</button>
-          <input type="hidden" value="{{_id}}" name="resourceId">
-          <input type="hidden" value="news" name="resourceType">
-        </form>
+            <form action="/techboard" method="post"> <button class="add-button" type="submit">Add this to
+                MyTechBoard</button>
+              <input type="hidden" value="{{_id}}" name="resourceId">
+              <input type="hidden" value="news" name="resourceType">
+            </form>
 
-        <a href="{{this.link}}" target='_blank'>read more...</a>
-      </p>
+            <a href="{{this.link}}" class="btn btn-primary news-more" target='_blank'>Read More...</a>
+          </div>
+        </div>
+        {{/each}}
+
+      </section>
     </div>
-    {{/each}}
-
-  </div>
-</div>
-
-<hr />
-
-<div class="container page-container">
-  <section class="courses">
-
-    {{#each data.articles}}
-    <div class="card events-card">
-      <div class="card-body">
-        <h5 class="card-title events-cart-title"><i class="far fa-newspaper"></i> {{title}}</h5>
-
-        <form action="/techboard" method="post"> <button class="add-button" type="submit">Add this to
-            MyTechBoard</button>
-          <input type="hidden" value="{{_id}}" name="resourceId">
-          <input type="hidden" value="news" name="resourceType">
-        </form>
-
-        <a href="{{this.link}}" class="btn btn-primary" target='_blank'>Read More...</a>
-      </div>
-    </div>
-    {{/each}}
-
-  </section>
-</div>
