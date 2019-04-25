@@ -7,6 +7,9 @@
                 "NODE_ENV": "development"
             },
             "request": "launch",
+            "env": {
+                "NODE_ENV": "development"
+            },
             "name": "Launch Program",
             "program": "${workspaceFolder}/bin/www"
         }

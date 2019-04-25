@@ -2,14 +2,21 @@
 
   <h1 class="news-header border-bottom border-gray pb-2 mb-0 event-style">Events</h1>
 
-  {{#each data.events}}
+  {{#each events}}
   <div class="card events-card">
     <div class="card-body">
-      <h5 class="card-title events-cart-title"><i class="fas fa-users"></i> {{this.name}}</h5>
-      <p class="card-text"><strong>Where: </strong>{{this.venue.name}}</p>
+      <h5 class="card-title events-cart-title"><i class="fas fa-users"></i>{{this.name}}</h5>
+      <p class="card-text"><strong>Where: </strong>{{this.company}}</p>
       <p class="card-text"><strong>When: </strong>{{this.local_date}}</p>
       <p class="card-text"><strong>Time: </strong>{{this.local_time}}</p>
       <p class="card-text"><strong>Event: </strong>{{this.visibility}}</p>
+
+      <form action="/techboard" method="post">
+        <button class="add-button" type="submit">Add this to MyTechBoard</button>
+        <input type="hidden" value="{{_id}}" name="resourceId">
+        <input type="hidden" value="event" name="resourceType">
+      </form>
+      
       <a href="{{this.link}}" class="btn btn-primary event-more" target='_blank'>Click here for event details</a>
     </div>
   </div>
