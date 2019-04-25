@@ -19,30 +19,34 @@ const upcomingEvents = () => {
         })
 }
 
-router.get('/events', (req, res, next) => {
+router.get("/events", (req, res, next) => {
   upcomingEvents()
     .then(data => {
-      console.log(data)
-      Object.keys(data.events).forEach(key => {
-        const event = data.events[key]
-        const eventObject = {
-          "name": event.name,
-          "link": event.link,
-          "local_date": event.local_date,
-          "local_time": event.local_time,
-          "city": event.venue.city,
-          "address": event.venue.address_1,
-          "company": event.venue.name,
-          "visibility": event.visibility
-        }
-        res.render('events', { data })
-        const newEvent = new Event(eventObject);
-        newEvent.save(function (err) {
-          if (err) return handleError(err);
-        })
-      })
+      res.render("events", { data });
+      helperFunction(data);
     })
-    .catch(err => console.error('Meetup API page failed'))
-})
+    .catch(err => console.error("Meetup API page failed"));
+});
+
+
+const helperFunction = data => {
+  Object.keys(data.events).forEach(key => {
+    const event = data.events[key];
+    const eventObject = {
+      name: event.name,
+      link: event.link,
+      local_date: event.local_date,
+      local_time: event.local_time,
+      city: event.venue.city,
+      address: event.venue.address_1,
+      company: event.venue.name,
+      visibility: event.visibility
+    };
+    const newEvent = new Event(eventObject);
+    newEvent.save(function(err) {
+      if (err) return handleError(err);
+    });
+  });
+};
 
 module.exports = router
