@@ -62,6 +62,18 @@ hbs.registerHelper("ifUndefined", (value, options) => {
     }
 });
 
+hbs.registerHelper("debug", function(optionalValue) {
+    console.log("Current Context");
+    console.log("====================");
+    console.log(this);
+
+    if (optionalValue) {
+        console.log("Value");
+        console.log("====================");
+        console.log(optionalValue);
+    }
+});
+
 // default value for title local
 app.locals.title = "MyTechBoard";
 

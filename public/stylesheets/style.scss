@@ -1,10 +1,18 @@
-/* logo font? font-family: 'Fugaz One', cursive;*/
+/* logo font? font-family: 'Fugaz One', cursive;
+event color: #ff8077 
+learning color - JS yellow: #F7DF1E
+News blue: #4F88C1
+navbar-color: #181021
+
+
+*/
+
 body {
     font-family: "Lato", sans-serif;
     color: #181021;
 }
 
-a {
+a:hover {
     color: #f7df1e;
 }
 
@@ -27,7 +35,7 @@ a {
     color: white;
 }
 
-.navbar a:hover {
+.navbar-dark .navbar-nav .nav-link:hover {
     color: #f7df1e;
 }
 
@@ -141,9 +149,51 @@ footer a {
     background-color: #181021;
     color: #f7df1e;
     border-radius: 5px;
+    display: inline-block;
 }
 
 .add-button:hover {
     background-color: #f7df1e;
     color: #181021;
+}
+
+.event-img {
+    background-color: #ff8077;
+    padding: 10px;
+    padding-bottom: 12px;
+    height: 160px;
+}
+
+.event-style {
+    background-color: #ff8077;
+}
+
+.learning-img {
+    background-color: #f7df1e;
+    padding: 10px;
+    padding-bottom: 12px;
+    height: 160px;
+}
+
+.learning-style {
+    background-color: #f7df1e;
+}
+
+.news-img {
+    background-color: #4f88c1;
+    padding: 10px;
+    padding-bottom: 12px;
+    height: 160px;
+}
+
+.news-style {
+    background-color: #4f88c1;
+}
+
+.my-tech-board-header {
+    font-family: "Fugaz One", cursive;
+}
+
+.delete-button {
+    display: inline-block;
 }
