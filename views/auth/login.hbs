@@ -1,8 +1,8 @@
 <div class="container page-container">
-   <div class="card col-md-8 offset-md-2">
-      <h2 class="header">Login</h2>
-      
-      <form action="/auth/login" method="POST" id="form-container">
+  <div class="card col-md-8 offset-md-2">
+    <h2 class="header">Login</h2>
+
+    <form action="/auth/login" method="POST" id="form-container">
       <div class="form-group">
         <label for="username">Username</label>
         <input class="form-control" id="username" type="text" name="username" placeholder="JonSnow">
@@ -14,15 +14,15 @@
       </div>
 
       {{#if message }}
-        <div class="error-message">{{ message }}</div>
+      <div class="error-message">{{ message }}</div>
       {{/if}}
-      
-      <button type="submit" class="btn btn-primary">Login</button>
-      
+
+      <button type="submit" class="btn btn-primary login">Login</button>
+
       <p class="account-message">
         Don't have an account yet?
         <a href="/auth/signup">Signup</a>
       </p>
     </form>
-  </div>  
+  </div>
 </div>
