@@ -55,14 +55,17 @@
           <a class="nav-link" href="/auth/signup">Sign Up</a>
         </li>
         {{else}}
-        <li class="nav-item adjust-right">
-          <a class="nav-link" href="/auth/logout">Log Out</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Hi {{user.username}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/techboard">My Techboard</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/auth/logout">Log Out</a>
+          </div>
         </li>
         {{/unless}}
-        <li class="nav-item adjust-right">
-          <a class="nav-link" href="/techboard">My Board</a>
-        </li>
-
       </ul>
     </div>
   </nav>
