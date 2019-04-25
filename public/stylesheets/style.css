@@ -5,7 +5,6 @@ News blue: #4F88C1
 JS official 'grey': #323330
 
 jumbotron-yellow: #f8dc58 
-
 */
 body {
   font-family: "Lato", sans-serif;
@@ -236,5 +235,10 @@ footer a {
 
 .card-info.card.text-center {
   padding: 20px; }
+
+/* for devices smaller then 960px */
+@media (max-width: 960px) {
+  .display-4 {
+    font-size: 4rem; } }
 
 /*# sourceMappingURL=style.css.map */
