@@ -2,16 +2,17 @@
 event color: #ff8077 
 learning color - JS yellow: #F7DF1E
 News blue: #4F88C1
-navbar-color: #181021
+JS official 'grey': #323330
 
+jumbotron-yellow: #f8dc58 
 
 */
 body {
   font-family: "Lato", sans-serif;
-  color: #181021; }
+  color: #323330; }
 
 a:hover {
-  color: #f7df1e; }
+  color: #f8dc58; }
 
 .page-container {
   margin-top: 20px; }
@@ -22,32 +23,28 @@ a:hover {
   margin-top: 70px; }
 
 .navbar {
-  background-color: #181021;
+  background-color: #323330;
   color: white; }
 
 .navbar a {
   color: white; }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: #f7df1e; }
+  color: #f8dc58; }
 
 .navbar-brand {
   font-family: "Fugaz One", cursive;
-  color: #f7df1e; }
+  color: #f8dc58; }
 
 .navbar-brand:visited {
   font-family: "Fugaz One", cursive;
-  color: #f7df1e; }
-
-.display-4 {
-  font-family: "Fugaz One", cursive;
-  color: #f7df1e; }
+  color: #f8dc58; }
 
 footer {
   text-align: center;
   width: 100%;
   height: 2.5rem;
-  background-color: #181021;
+  background-color: #323330;
   color: white;
   height: 30px; }
 
@@ -59,15 +56,29 @@ footer a {
   color: white; }
 
 /* home */
+/*This is the jumotron header*/
+.display-4 {
+  font-family: "Fugaz One", cursive;
+  color: #f8f8f2;
+  font-size: 6rem;
+  padding-bottom: 45px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px #25253d; }
+
 .jumbotron {
-  color: white;
-  background-image: url("https://images.unsplash.com/photo-1518932945647-7a1c969f8be2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80");
+  color: #25253d;
+  background-image: url("/images/js.png");
   background-position: center;
   background: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat center;
   text-align: center;
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  height: 100%; }
 
+.intro-text {
+  text-align: center; }
+
+/* Main index page & news/events/material boxes*/
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -75,6 +86,10 @@ footer a {
 
 .cards-wrapper {
   margin: 10px 0px; }
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bolder; }
 
 .card-info {
   margin: 10px; }
@@ -112,17 +127,25 @@ footer a {
 .techboard {
   text-align: center; }
 
+/*Tech Board styling*/
 /*add to my tech board button */
 .add-button {
   background-color: #181021;
-  color: #f7df1e;
+  color: #f8dc58;
   border-radius: 5px;
   display: inline-block; }
 
 .add-button:hover {
-  background-color: #f7df1e;
+  background-color: #f8dc58;
   color: #181021; }
 
+.my-tech-board-header {
+  font-family: "Fugaz One", cursive; }
+
+.delete-button {
+  display: inline-block; }
+
+/*Styling to set the categories apart*/
 .event-img {
   background-color: #ff8077;
   padding: 10px;
@@ -133,13 +156,13 @@ footer a {
   background-color: #ff8077; }
 
 .learning-img {
-  background-color: #f7df1e;
+  background-color: #f8dc58;
   padding: 10px;
   padding-bottom: 12px;
   height: 160px; }
 
 .learning-style {
-  background-color: #f7df1e; }
+  background-color: #f8dc58; }
 
 .news-img {
   background-color: #4f88c1;
@@ -149,11 +172,5 @@ footer a {
 
 .news-style {
   background-color: #4f88c1; }
-
-.my-tech-board-header {
-  font-family: "Fugaz One", cursive; }
-
-.delete-button {
-  display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */

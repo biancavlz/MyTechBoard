@@ -107,4 +107,7 @@ app.use("/auth", authRoutes);
 const techBoard = require("./routes/techboard");
 app.use("/", techBoard);
 
+const about = require("./routes/about");
+app.use("/", about);
+
 module.exports = app;
