@@ -7,11 +7,7 @@
       <div class="card-body">
         <h5 class="card-title events-cart-title"><i class="fas fa-laptop-code"></i> {{title}}</h5>
 
-        <form action="/techboard" method="post"> <button class="add-button" type="submit">Add this to
-            MyTechBoard</button>
-          <input type="hidden" value="{{_id}}" name="resourceId">
-          <input type="hidden" value="learningMaterial" name="resourceType">
-        </form>
+
 
         <p class="card-text">{{description}}</p>
         <p class="card-text"><strong>Resource: </strong>{{materialType}}</p>
@@ -20,7 +16,12 @@
         {{else}}
         <p class="card-text"><strong>Cost: </strong>NOT free</p>
         {{/if}}
-        <a href="{{source}}" class="btn btn-primary" target='_blank'>Go to {{materialType}}</a>
+        <form action="/techboard" method="post"> <button class="add-button" type="submit">Add this to
+            MyTechBoard</button>
+          <input type="hidden" value="{{_id}}" name="resourceId">
+          <input type="hidden" value="learningMaterial" name="resourceType">
+        </form>
+        <a href="{{source}}" class="btn btn-primary learn-more" target='_blank'>Go to {{materialType}}</a>
       </div>
     </div>
     {{/each}}
@@ -41,15 +42,20 @@
         </form>
 
 
-        <a href="https://www.youtube.com/{{link}}" class="btn btn-primary" target='_blank'>go to video</a>
+        <a href="https://www.youtube.com/{{link}}" class="btn btn-primary learn-more" target='_blank'>go to video</a>
       </div>
     </div>
     {{/each}}
   </section>
 
   <section class="add-new">
-    <h3>Something missing?</h3>
 
-    <h4><a href="/learning/new">Add New Learning Material</a> </h4>
+    <h1 class="events-header learning-style">Something Missing?</h1>
+    <div class="intro-text container page-container">
+      <p class="lead">
+        If you are a logged in user you can add any JavaScript material you like!
+
+        <h4><a href="/learning/new">Add New Learning Material</a> </h4>
+
   </section>
 </div>

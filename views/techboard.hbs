@@ -11,7 +11,7 @@
         <h3>Learning Materials</h3>
         <dl>
           {{#each materials}}
-          <h5 class="card-title"><i class="fas fa-laptop-code"></i> {{title}}</h5>
+          <h6 class="card-title"><i class="fas fa-laptop-code"></i> {{title}}</h6>
           <dd> <a class="btn btn-light " href="{{source}}">Learn More</a>
 
             <form action="/techboard/delete" method="post" class="delete-button">
@@ -24,6 +24,7 @@
           </dd>
 
           {{/each}}
+          <a href="/learning" class="btn btn-secondary learning-button">Go to Learning List</a>
         </dl>
       </div>
 
@@ -43,6 +44,7 @@
             </form>
           </dd>
           {{/each}}
+          <a href="/events" class="btn btn-secondary event-button">Go to Event list</a>
         </dl>
       </div>
 
@@ -63,6 +65,8 @@
             </form>
           </dd>
           {{/each}}
+
+          <a href="/news" class="btn btn-secondary news-button">Go to News List</a>
         </dl>
 
       </div>
@@ -83,14 +87,20 @@
             </form>
           </dd>
           {{/each}}
+          <a href="/learning" class="btn btn-secondary learning-button">Go to Learning List</a>
         </dl>
+
       </div>
 
     </section>
 
-    <div>
-      <h2>No content?</h2>
-      <p>start by checking out News, Events & Learning Materials you might like</p>
+
+    <h1 class="news-header border-bottom border-gray pb-2 mb-0 ">No Content?</h1>
+    <div class="intro-text container page-container">
+      <p class="lead">
+        Start by checking out News, Events & Learning Materials you might like
+
+      </p>
     </div>
 
     <section class="card-container cards-wrapper">
