@@ -231,4 +231,10 @@ footer a {
   color: #323330;
   border-color: #989997; }
 
+.card-title.techboard-title {
+  font-weight: bold; }
+
+.card-info.card.text-center {
+  padding: 20px; }
+
 /*# sourceMappingURL=style.css.map */
