@@ -79,7 +79,8 @@ footer a {
   height: 100%; }
 
 .intro-text {
-  text-align: center; }
+  text-align: center;
+  margin-top: 15px; }
 
 /* Main index page & news/events/material boxes*/
 .card-container {
