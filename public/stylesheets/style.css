@@ -5,7 +5,6 @@ News blue: #4F88C1
 JS official 'grey': #323330
 
 jumbotron-yellow: #f8dc58 
-
 */
 body {
   font-family: "Lato", sans-serif;
@@ -26,9 +25,6 @@ a:hover {
   background-color: #323330;
   color: white; }
 
-.navbar a {
-  color: white; }
-
 .navbar-dark .navbar-nav .nav-link:hover {
   color: #f8dc58; }
 
@@ -39,6 +35,13 @@ a:hover {
 .navbar-brand:visited {
   font-family: "Fugaz One", cursive;
   color: #f8dc58; }
+
+.dropdown-menu {
+  background-color: #f8dc58; }
+
+.dropdown-menu:hover {
+  background-color: #f8dc58;
+  opacity: 1.0; }
 
 footer {
   text-align: center;
@@ -236,5 +239,10 @@ footer a {
 
 .card-info.card.text-center {
   padding: 20px; }
+
+/* for devices smaller then 960px */
+@media (max-width: 960px) {
+  .display-4 {
+    font-size: 4rem; } }
 
 /*# sourceMappingURL=style.css.map */
