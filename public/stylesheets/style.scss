@@ -17,13 +17,13 @@ a:hover {
 }
 
 .page-container {
-    margin-top: 20px;
+    margin-top: 70px;
 }
 
 /* layout */
 .main-container {
     margin-bottom: 60px;
-    margin-top: 70px;
+    margin-top: 57px;
 }
 
 .navbar {
@@ -97,6 +97,7 @@ footer a {
 
 .intro-text {
     text-align: center;
+    margin-top: 15px;
 }
 
 /* Main index page & news/events/material boxes*/
@@ -301,5 +302,12 @@ footer a {
 @media(max-width: 960px) {
   .display-4 {
     font-size: 4rem;
+  }
+}
+
+/* for devices smaller then 960px */
+@media(max-width: 667px) {
+  .display-4 {
+    font-size: 2.5rem;
   }
 }
