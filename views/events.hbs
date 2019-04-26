@@ -5,11 +5,11 @@
   {{#each events}}
   <div class="card events-card">
     <div class="card-body">
-      <h5 class="card-title events-cart-title"><i class="fas fa-users"></i>{{this.name}}</h5>
-      <p class="card-text"><strong>Where: </strong>{{this.company}}</p>
-      <p class="card-text"><strong>When: </strong>{{this.local_date}}</p>
-      <p class="card-text"><strong>Time: </strong>{{this.local_time}}</p>
-      <p class="card-text"><strong>Event: </strong>{{this.visibility}}</p>
+      <h5 class="card-title events-cart-title"><i class="fas fa-users"></i> {{this.name}}</h5>
+      <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{this.company}} | {{this.address}}, {{this.city}}</p>
+      <p class="card-text"><i class="far fa-calendar-alt"></i> {{this.local_date}}</p>
+      <p class="card-text"><i class="far fa-clock"></i> {{this.local_time}}</p>
+      <p class="card-text"><i class="fas fa-unlock-alt"></i> {{this.visibility}}</p>
 
       <form action="/techboard" method="post">
         <button class="add-button" type="submit">Add this to MyTechBoard</button>
@@ -17,7 +17,7 @@
         <input type="hidden" value="event" name="resourceType">
       </form>
       
-      <a href="{{this.link}}" class="btn btn-primary event-more" target='_blank'>Click here for event details</a>
+      <a href="{{this.link}}" class="btn btn-primary event-more" target='_blank'>More information</a>
     </div>
   </div>
   {{/each}}
