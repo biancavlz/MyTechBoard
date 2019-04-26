@@ -56,10 +56,6 @@ const scrapeYoutube = async () => {
         }))
     );
 
-    console.log("YOUTUBE SCRAPED DATA");
-    console.log(scrapedData);
-    console.log("*********************");
-
     await browser.close();
     return scrapedData;
 };

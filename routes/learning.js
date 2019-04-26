@@ -11,7 +11,7 @@ router.get("/learning", (req, res, next) => {
             return Promise.all(
                 youtubeVideos.map(element => {
                     element.title = element.title.trim();
-                    Video.findOneAndUpdate(element, element, { upsert: true });
+                    return Video.findOneAndUpdate(element, element, { upsert: true, new: true });
                 })
             );
         })
